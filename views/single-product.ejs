@@ -1,0 +1,39 @@
+<%- include('includes/head', { pageTitle: 'Product' }) %>
+</head>
+
+<body>
+    <%- include('includes/header') %>
+    <link rel="stylesheet" href="/styles/product.css" />
+
+</header>
+<div class="product-grid"> 
+<article class="product-item single-product">
+  <h2><%= product.title %></h2>
+  <img src="/products/assets/images/<%= product.image %>" alt="<%= product.title %>" />
+  <div class="product-item-content single-product-content">
+
+    <p>
+      <h2>Summary</h2>
+      <%= product.summary %>
+    </p>
+    <p> <h2>Description</h2>
+      <%= product.description %></p>
+    <hr>
+    <p> <h2>Price</h2>
+      <%= product.price %>$</p>
+  </div>
+  <form action="/cart" method="POST">
+    <label for="amount">Amount</label>
+    <select name="amount" id="product-amount">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <button class="btn btn-alt">Add to cart</button>
+  </form>
+</article>
+</div>
+</body>
+</html>
